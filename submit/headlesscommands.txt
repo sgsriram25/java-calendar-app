@@ -1,0 +1,61 @@
+create calendar --name Cal1 --timezone America/New_York
+create calendar --name Cal2 --timezone Asia/Calcutta
+create calendar --name Cal3 --timezone Asia/Dubai
+create calendar --name Cal4 --timezone Asia/Singapore
+
+use calendar --name Cal1
+
+create event PDPclass from 2025-03-15T09:00 to 2025-03-15T10:00
+create event DBMS from 2025-03-15T09:30 to 2025-03-15T10:30 --autoDecline
+create event DBMS from 2025-03-15T09:30 to 2025-03-15T10:30 
+create event CodeWalk from 2025-03-16T10:00 to 2025-03-16T11:00
+edit event name CodeWalk from 2025-03-16T10:00 to 2025-03-16T11:00 with MoonWalk
+show status on 2025-03-15T09:30
+print events on 2025-03-15T10:00
+create event PastEvent from 2024-01-01T09:00 to 2024-01-01T10:00
+create event Conference from 2025-03-20T09:00 to 2025-03-22T18:00
+create event DebugTest from 2025-04-01T10:00 to 2025-04-01T10:30 repeats MT for 3 times
+create event Classes from 2025-01-15T08:30 to 2025-01-15T10:45 repeats MTWRF until 2025-04-28T23:59
+create event Assignmentsubmission from 2025-04-05T10:00 to 2025-04-05T11:00
+edit event name Assignmentsubmission from 2025-04-05T10:00 to 2025-04-05T11:00 with Additionalday
+edit event location Additionalday from 2025-04-05T10:00 to 2025-04-05T11:00 with "Meeserv Hall"
+create event poppy from 2025-04-06T15:00 to 2025-04-06T16:00 repeats MWF for 35 times
+edit events location poppy from 2025-04-08T15:00 with online  
+print events from 2025-04-01T00:00 to 2025-04-15T23:59
+create event CompanyHoliday on 2025-05-01T00:00
+create event TeamBuilding on 2025-05-03 repeats S for 4 times
+create event --autoDecline Exam on 2025-03-25T00:00
+
+copy event PDPclass on 2025-03-15T09:00 --target Cal2 to 2025-03-28T18:00
+copy events on 2025-03-16 --target Cal3 to 2025-03-16
+copy events between 2025-04-01 and 2025-04-15 --target Cal4 to 2025-05-01
+
+
+create calendar --name test --timezone America/New_York
+use calendar --name test 
+create event newT on 2025-03-26T02:11
+print events on 2025-03-26
+edit calendar --name test --property timezone Asia/Kolkata
+print events on 2025-03-26                                 
+create calendar --name test2 --timezone America/New_York
+use calendar --name test                                   
+copy events on 2025-03-26 --target test2 to 2025-03-26 
+print events on 2025-03-26
+
+use calendar --name Cal1
+export cal mycalendar1.csv
+
+use calendar --name Cal2
+export cal mycalendar2.csv
+
+use calendar --name Cal3
+export cal mycalendar3.csv
+
+use calendar --name Cal4
+export cal mycalendar4.csv
+
+use calendar --name test
+export cal test.csv
+
+use calendar --name test2
+export cal test2.csv

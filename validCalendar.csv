@@ -1,0 +1,3 @@
+Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location,Private
+Event2,2020-01-02,00:00,2020-01-02,23:59,true,,,false
+Event1,2020-01-01,12:00,2020-01-01,13:00,false,,,false
